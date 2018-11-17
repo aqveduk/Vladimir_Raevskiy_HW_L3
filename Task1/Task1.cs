@@ -5,7 +5,6 @@ VLADIMIR RAEVSKIY
 GEEKBRAINS LESSON3
 
 TASK1 - СТРУТКУРА И КЛАСС, ПРИНЦИП РАБОТЫ
-TASK2 - 
 
 *
 */
@@ -55,7 +54,7 @@ namespace Vladimir_Raevskiy_HW_L3
 
     class ComplexNum  //TASK1 - Б) КЛАСС, ПРИНЦИП РАБОТЫ
     {
-        private double im;
+        double im;
         double re;
 
         public ComplexNum()
@@ -123,12 +122,12 @@ namespace Vladimir_Raevskiy_HW_L3
         {
             //СТРУКТУРА
             Complex complex1;
-            complex1.re = 1;
-            complex1.im = 1;
+            complex1.re = 2;
+            complex1.im = 2;
 
             Complex complex2;
-            complex2.re = 2;
-            complex2.im = 2;
+            complex2.re = 4;
+            complex2.im = 4;
 
             Print($"PRINT STRUCTURE RESULT, A");
 
@@ -148,11 +147,11 @@ namespace Vladimir_Raevskiy_HW_L3
 
 
             //КЛАСС
-            ComplexNum complexNum1 = new ComplexNum(2, 2);
-            ComplexNum complexNum2 = new ComplexNum(4, 4);
+            ComplexNum complexNum1 = new ComplexNum(3, 2);
+            ComplexNum complexNum2 = new ComplexNum(3, 4);
 
-            complexNum1.Im = 5;  //ИЗМЕНЕНИЕ ПРИВАТНОГО ПОЛЯ КЛАССА
-            complexNum2.Im = 6;
+            complexNum1.Im = 2;  //ИЗМЕНЕНИЕ ПРИВАТНОГО ПОЛЯ КЛАССА
+            complexNum2.Im = 4;
 
             Print("PRINT CLASS RESULT: ");
 
@@ -160,14 +159,15 @@ namespace Vladimir_Raevskiy_HW_L3
             ComplexNum resultClass = complexNum1.Plus(complexNum2);
             Print("CLASS SUM: ");
             Print(resultClass.ToString());
+           
+            resultClass = complexNum1.Multi(complexNum2);
+            Print("CLASS MULTIPLICATION: ");
+            Print(resultClass.ToString());   //ПЕРЕГРУЗКА 
 
             resultClass = complexNum1.Subtract(complexNum2);
             Print("CLASS SUBTRACT: ");
             Print(resultClass.ToString());   //ПЕРЕГРУЗКА 
 
-            resultClass = complexNum1.Multi(complexNum2);
-            Print("CLASS MULTIPLICATION: ");
-            Print(resultClass.ToString());   //ПЕРЕГРУЗКА 
 
             Pause();
         }
